@@ -311,6 +311,7 @@ if [ "$expert" == "true" ]; then
 		emuTable+=(TRUE "Multiple" "RetroArch")
 		emuTable+=(TRUE "Arcade" "MAME")
 		emuTable+=(TRUE "Metroid Prime" "PrimeHack")
+		emuTable+=(TRUE "Super Smash Bros. Melee" "Slippi")
 		emuTable+=(TRUE "PS2" "PCSX2-Legacy")
 		emuTable+=(TRUE "PS2" "PCSX2-QT")
 		emuTable+=(TRUE "PS3" "RPCS3")
@@ -358,6 +359,11 @@ if [ "$expert" == "true" ]; then
 				setSetting doInstallPrimeHacks true
 			else
 				setSetting doInstallPrimeHacks false
+			fi
+			if [[ "$emusToInstall" == *"Slippi"* ]]; then
+				setSetting doInstallSlippi true
+			else
+				setSetting doInstallSlippi false
 			fi
 			if [[ "$emusToInstall" == *"PCSX2-Legacy"* ]]; then
 				setSetting doInstallPCSX2 true
@@ -507,6 +513,7 @@ if [ "$expert" == "true" ]; then
 			emuTable+=(TRUE "RetroArch")
 			emuTable+=(TRUE "MAME")
 			emuTable+=(TRUE "PrimeHack")
+			emuTable+=(TRUE "Slippi")
 			emuTable+=(TRUE "PCSX2-Legacy")
 			emuTable+=(TRUE "PCSX2-QT")
 			emuTable+=(TRUE "RPCS3")
@@ -550,6 +557,11 @@ if [ "$expert" == "true" ]; then
 					setSetting doSetupPrimeHacks true
 				else
 					setSetting doSetupPrimeHacks false
+				fi
+				if [[ "$emusToReset" == *"Slippi"* ]]; then
+					setSetting doSetupSlippi true
+				else
+					setSetting doSetupSlippi false
 				fi
 				if [[ "$emusToReset" == *"PCSX2-Legacy"* ]]; then
 					setSetting doSetupPCSX2 true
@@ -653,6 +665,7 @@ else
 	setSetting doInstallDuck true
 	setSetting doInstallCemu true
 	setSetting doInstallPrimeHacks true
+	setSetting doInstallSlippi true
 	setSetting doInstallPPSSPP true
 	setSetting doInstallXemu true
 	setSetting doInstallMAME true

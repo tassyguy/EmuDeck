@@ -401,6 +401,7 @@ if [ "$RUNCHOICE" == 1 ]; then
 			emuTable+=(TRUE "GameBoy / Color / Advance" "mGBA")
 			emuTable+=(TRUE "Multiple" "RetroArch")
 			emuTable+=(TRUE "Metroid Prime" "PrimeHack")
+			emuTable+=(TRUE "Super Smash Bros. Melee" "Slippi")
 			emuTable+=(TRUE "PS2" "PCSX2")
 			emuTable+=(TRUE "PS2" "PCSX2-QT")
 			emuTable+=(TRUE "PS3" "RPCS3")
@@ -444,6 +445,9 @@ if [ "$RUNCHOICE" == 1 ]; then
 				fi
 				if [[ "$emusToInstall" == *"PrimeHack"* ]]; then
 					setSetting doInstallPrimeHacks true
+				fi
+				if [[ "$emusToInstall" == *"Slippi"* ]]; then
+					setSetting doInstallSlippi true
 				fi
 				if [[ "$emusToInstall" == *"PCSX2"* ]]; then
 					setSetting doInstallPCSX2 true
@@ -560,6 +564,7 @@ if [ "$RUNCHOICE" == 1 ]; then
 				emuTable+=(TRUE "mGBA")
 				emuTable+=(TRUE "RetroArch")
 				emuTable+=(TRUE "PrimeHack")
+				emuTable+=(TRUE "Slippi")
 				emuTable+=(TRUE "PCSX2")
 				emuTable+=(TRUE "PCSX2-QT")
 				emuTable+=(TRUE "RPCS3")
@@ -600,6 +605,9 @@ if [ "$RUNCHOICE" == 1 ]; then
 					fi
 					if [[ "$emusToReset" == *"PrimeHack"* ]]; then
 						setSetting doSetupPrimeHacks true
+					fi
+					if [[ "$emusToReset" == *"Slippi"* ]]; then
+						setSetting doSetupSlippi true
 					fi
 					if [[ "$emusToReset" == *"PCSX2"* ]]; then
 						setSetting doSetupPCSX2 true
@@ -668,6 +676,7 @@ if [ "$RUNCHOICE" == 1 ]; then
 		setSetting doInstallCemu true
 		setSetting doInstallXenia false
 		setSetting doInstallPrimeHacks true
+		setSetting doInstallSlippi true
 		setSetting doInstallPPSSPP true
 		setSetting doInstallXemu true
 		#doInstallMelon=true
@@ -814,6 +823,9 @@ if [ "$doSetupRA" == "true" ]; then
 fi
 if [ "$doSetupPrimeHacks" == "true" ]; then
 	Primehack_init
+fi
+if [ "$doSetupSlippi" == "true" ]; then
+	Slippi_init
 fi
 if [ "$doSetupDolphin" == "true" ]; then
 	Dolphin_init

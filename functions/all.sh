@@ -56,6 +56,7 @@ source "$EMUDECKGIT"/functions/EmuScripts/emuDeckRPCS3.sh
 source "$EMUDECKGIT"/functions/EmuScripts/emuDeckCitra.sh
 source "$EMUDECKGIT"/functions/EmuScripts/emuDeckDolphin.sh 
 source "$EMUDECKGIT"/functions/EmuScripts/emuDeckPrimehack.sh
+source "$EMUDECKGIT"/functions/EmuScripts/emuDeckSlippi.sh
 source "$EMUDECKGIT"/functions/EmuScripts/emuDeckRetroArch.sh
 source "$EMUDECKGIT"/functions/EmuScripts/emuDeckRyujinx.sh
 source "$EMUDECKGIT"/functions/EmuScripts/emuDeckPPSSPP.sh

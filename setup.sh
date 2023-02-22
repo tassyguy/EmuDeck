@@ -247,6 +247,10 @@ if [ $doInstallPrimeHacks == "true" ]; then
 	echo "install primehack"
 	Primehack_install
 fi
+if [ $doInstallSlippi == "true" ]; then
+	echo "install Slippi"
+	Slippi_install
+fi
 if [ $doInstallRPCS3 == "true" ]; then
 	echo "install rpcs3"
 	RPCS3_install

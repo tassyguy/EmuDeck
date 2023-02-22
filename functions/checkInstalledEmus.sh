@@ -30,6 +30,9 @@ checkInstalledEmus(){
 	if $doInstallPrimeHacks; then
 		emuList+=("Primehack")
 	fi
+	if $doInstallSlippi; then
+		emuList+=("Slippi")
+	fi
 	if $doInstallPPSSPP; then
 		emuList+=("PPSSPP")
 	fi

@@ -13,6 +13,7 @@ doUninstallCemuNative=true
 doUninstallXemu=true
 doUninstallXenia=true
 doUninstallPrimeHacks=true
+doUninstallSlippi=true
 doUninstallPPSSPP=true
 doUninstallMame=true
 doUninstallSRM=true
@@ -79,19 +80,20 @@ if [ "$doUninstall" == true ]; then
 				--column="Keep this emulator and its configuration" \
 				1 "RetroArch"\
 				2 "PrimeHack" \
-				3 "PCSX2" \
-				4 "RPCS3" \
-				5 "Citra" \
-				6 "Dolphin" \
-				7 "Duckstation" \
-				8 "PPSSPP" \
-				9 "Yuzu" \
-				10 "Ryujinx" \
-				11 "Xemu" \
-				12 "Cemu" \
-				13 "Cemu Native" \
-				14 "Mame"  \
-				15 "RMG"  )
+				3 "Slippi" \
+				4 "PCSX2" \
+				5 "RPCS3" \
+				6 "Citra" \
+				7 "Dolphin" \
+				8 "Duckstation" \
+				9 "PPSSPP" \
+				10 "Yuzu" \
+				11 "Ryujinx" \
+				12 "Xemu" \
+				13 "Cemu" \
+				14 "Cemu Native" \
+				15 "Mame"  \
+				16 "RMG"  )
 	ans=$?	
 	if [ $ans -eq 0 ]; then
 		
@@ -100,6 +102,9 @@ if [ "$doUninstall" == true ]; then
 		fi
 		if [[ "$emusToUninstall" == *"PrimeHack"* ]]; then
 			doUninstallPrimeHacks=false
+		fi
+		if [[ "$emusToUninstall" == *"Slippi"* ]]; then
+			doUninstallSlippi=false
 		fi
 		if [[ "$emusToUninstall" == *"PCSX2"* ]]; then
 			doUninstallPCSX2=false
@@ -161,6 +166,10 @@ if [ "$doUninstall" == true ]; then
 		flatpak uninstall io.github.shiiion.primehack --system -y
 		rm -rf ~/.var/app/io.github.shiiion.primehack &>> /dev/null	
 	fi
+	# if [[ "$doUninstallSlippi" == true ]]; then
+	#	flatpak uninstall io.github.project-slippi.slippi --system -y
+	#	rm -rf ~/.var/app/io.github.project-slippi.slippi &>> /dev/null	
+	# fi
 	if [[ "$doUninstallPCSX2" == true ]]; then
 		flatpak uninstall net.pcsx2.PCSX2 --system -y
 		rm -rf ~/Applications/pcsx2-Qt.AppImage &>> /dev/null
